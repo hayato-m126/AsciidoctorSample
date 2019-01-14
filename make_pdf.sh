@@ -1,0 +1,1 @@
+asciidoctor-pdf sample.adoc -o sample.pdf -n -r asciidoctor-diagram
