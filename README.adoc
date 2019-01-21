@@ -1,17 +1,27 @@
-# Asciidoctor sample
+= Asciidoctor sample
 Asciidoctorを使って、PlantUML、graphvizなどの図を取り込んだ技術文章を作るサンプル
 
-# ファイル構成
-- sample.adoc サンプルファイル
-- replace.sh  Markdownで作ったファイルをAsciidocにコマンドを置換するファイル（簡易的な処理しか出来ません）
-- make_pdf.sh sample.adocからpdfを作るスクリプト(下記のコマンドを叩くだけ)
+== Asciidocで文章を作るための参考リンク
+* link:https://qiita.com/hyt126/items/7a070bc2b1e185b9146f[Asciidocで技術文章を作成する]
+* link:https://qiita.com/hyt126/items/9503ac50ab72553d1032[Asciidocのプレビュー環境を作る]
+* link:https://qiita.com/hyt126/items/fdeff36f09bb221dfac0[Asciidocの編集環境を作る]
 
-# HTML作成コマンド
+== ファイル構成
+* sample.adoc サンプルファイル
+* replace.sh  Markdownで作ったファイルをAsciidocにコマンドを置換するファイル（簡易的な処理しか出来ません）
+* make_pdf.sh sample.adocからpdfを作るスクリプト(下記のコマンドを叩くだけ)
+
+== HTML作成コマンド
 ```
 $ asciidoctor -b html5 sample.adoc -r asciidoctor-diagram
 ```
 
-# PDF作成コマンド
+== PDF作成コマンド
 ```
 $ asciidoctor-pdf sample.adoc -o sample.pdf -n -r asciidoctor-diagram
+```
+
+== 別刷りの表紙を合成してPDFを作成するコマンド
+```
+$ asciidoctor-pdf sample.adoc -o sample.pdf -a notitle -a front-cover-image=image:sample_cover.pdf[] -n -r asciidoctor-diagram
 ```
